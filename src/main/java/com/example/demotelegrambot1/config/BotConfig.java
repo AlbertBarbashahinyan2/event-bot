@@ -2,7 +2,6 @@ package com.example.demotelegrambot1.config;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -10,9 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 public class BotConfig {
 
-    @Value("${bot.name}")
-    String botName;
+    String botName = System.getenv("BOT_NAME");
 
-    @Value("${bot.token}")
-    String botToken;
+    String botToken = System.getenv("BOT_TOKEN");
 }
